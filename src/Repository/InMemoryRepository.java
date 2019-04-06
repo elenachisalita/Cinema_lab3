@@ -1,7 +1,6 @@
 package Repository;
 
-import Domain.Movie;
-import Domain.MovieValidator;
+
 import Domain.Entity;
 import Domain.IValidator;
 

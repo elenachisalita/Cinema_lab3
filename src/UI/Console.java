@@ -141,7 +141,7 @@ public class Console {
             String time = scanner.nextLine();
 
             Reservation reservation = reservationService.addOrUpdate(id, idMovie, idClientCard,date, time);
-            System.out.println(String.format("Added reservation id=%s, paid price=%f",reservation.getId()));//
+            System.out.println(String.format("Added reservation id=%s, bonus = %f",reservation.getId(),reservation.getBonusedPrice()));//
         } catch (Exception ex) {
             System.out.println("Errors:\n" + ex.getMessage());
         }

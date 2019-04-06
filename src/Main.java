@@ -20,7 +20,7 @@ public class Main {
 
         MovieService movieService = new MovieService(movieRepository);
         ClientService clientService = new ClientService(clientRepository);
-        ReservationService reservationService = new ReservationService(reservationRepository);
+        ReservationService reservationService = new ReservationService(reservationRepository, movieRepository);
 
         Console console = new Console(movieService, clientService, reservationService);
         console.run();

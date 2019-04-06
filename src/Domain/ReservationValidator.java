@@ -7,7 +7,7 @@ public class ReservationValidator implements IValidator<Reservation>{
 
     public void validate (Reservation reservation) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yyyy");
-        SimpleDateFormat simpleTimeFormat = new SimpleDateFormat("hh");
+        SimpleDateFormat simpleTimeFormat = new SimpleDateFormat("hh:mm");
         try {
             simpleDateFormat.parse(reservation.getDate());
 

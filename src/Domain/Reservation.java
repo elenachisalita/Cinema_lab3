@@ -3,8 +3,10 @@ package Domain;
 public class Reservation extends Entity {
 
     private String id, idMovie, idClientCard, date, time;
+    private double basePrice;
+    private double bonus;
 
-    public Reservation(String id, String idMovie, String idClientCard, String date, String time) {
+    public Reservation(String id, String idMovie, String idClientCard, String date, String time, double basePrice, double bonus) {
 
         super(id);
         this.id = id;
@@ -12,8 +14,14 @@ public class Reservation extends Entity {
         this.idClientCard = idClientCard;
         this.date = date;
         this.time = time;
+        this.basePrice = basePrice;
+        this.bonus = bonus;
     }
 
+
+    public double getBonusedPrice() {
+        return bonus * basePrice;
+    }
     @Override
     public String toString() {
         return "Reservation{" +
@@ -22,7 +30,19 @@ public class Reservation extends Entity {
                 ", idClientCard='" + idClientCard + '\'' +
                 ", date='" + date + '\'' +
                 ", time='" + time + '\'' +
+                ", basePrice='" + basePrice + '\'' +
+                ", bonus='" + bonus + '\'' +
                 '}';
+    }
+
+
+
+    public double getBonus() {
+        return bonus;
+    }
+
+    public void setBonus(double bonus) {
+        this.bonus = bonus;
     }
 
     public String getId() {
@@ -63,5 +83,13 @@ public class Reservation extends Entity {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public double getBasePrice() {
+        return basePrice;
+    }
+
+    public void setBasePrice(double basePrice) {
+        this.basePrice = basePrice;
     }
 }

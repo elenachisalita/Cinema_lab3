@@ -13,7 +13,7 @@ public class ReservationService {
     private IRepository<Reservation> reservationRepository;
     private IRepository<Movie> movieRepository;
 
-    public ReservationService(IRepository<Reservation> reservationRepository) {
+    public ReservationService(IRepository<Reservation> reservationRepository, IRepository<Movie> movieRepository) {
         this.reservationRepository = reservationRepository;
         this.movieRepository = movieRepository;
     }
@@ -46,7 +46,7 @@ public class ReservationService {
             bonus = 0.1;
         }
 
-        Reservation reservation = new Reservation(id, idMovie, idClientCard, date, time);
+        Reservation reservation = new Reservation(id, idMovie, idClientCard, date, time,basePrice, bonus);
         reservationRepository.upsert(reservation);
         return reservation;
     }
